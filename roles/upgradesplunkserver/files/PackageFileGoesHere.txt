@@ -1,0 +1,6 @@
+
+Please place the package file (splunk-6.5.0-59c8927def0f-linux-2.6-amd64.deb 
+for instance) in this directory and edit the ../vars/splunk-server-version.yml
+file and set the 'splunkserverversion' variable to the proper value
+("6.5.0-59c8927def0f" in this instance).
+
