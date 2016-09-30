@@ -27,10 +27,13 @@ None.
 Example Playbook
 ----------------
 
+```yml
 - hosts: serversplunk
   become: true
   roles:
     - upgradesplunkserver
+```
+
 
 License
 -------
