@@ -1,0 +1,4 @@
+
+splunkserverpackage: "splunk-{{ splunkserverversion }}-linux-2.6-amd64.deb"
+splunkservermanifest: "{{ splunkpath }}/splunk-{{ splunkserverversion }}-linux-2.6-x86_64-manifest"
+

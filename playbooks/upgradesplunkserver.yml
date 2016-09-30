@@ -1,0 +1,7 @@
+
+---
+- hosts: serversplunk
+  become: true
+  roles:
+    - upgradesplunkserver
+

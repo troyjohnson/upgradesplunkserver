@@ -1,0 +1,30 @@
+---
+# tasks file for upgradesplunkserver
+
+  - include_vars: "splunk-server-version.yml"
+  - include_vars: "splunk-server-package-{{ ansible_os_family  }}.yml"
+
+  - name: test for manifest file
+    command: "test -e {{ splunkservermanifest }}"
+    ignore_errors: "yes"
+    register: manifest
+
+  - block: 
+
+    - name: copy splunkserver package
+      copy: src="{{ splunkserverpackage }}"
+            dest="{{ temppath }}/"
+
+    - name: install splunk deb package
+      apt: deb="{{ temppath }}/{{ splunkserverpackage }}"
+           state="present"
+      when: ansible_os_family == "Debian"
+
+    - name: splunk license acceptance
+      command:  "{{ splunkbin }} start --accept-license --answer-yes --no-prompt
+"
+      notify: restart_splunk
+
+    when: manifest.rc == 1
+
+

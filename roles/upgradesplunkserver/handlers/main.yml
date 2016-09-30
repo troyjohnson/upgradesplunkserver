@@ -1,0 +1,7 @@
+---
+# handlers file for upgradesplunkserver
+
+ - name: restart_splunk
+   service: name="splunk"
+            state="restarted"
+
