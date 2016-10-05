@@ -5,9 +5,9 @@
   - include_vars: "splunk-server-package-{{ ansible_os_family  }}.yml"
 
   - name: test for manifest file
-    command: "test -e {{ splunkservermanifest }}"
-    ignore_errors: "yes"
+    stat: path="{{ splunkservermanifest }}"
     register: manifest
+    always_run: yes
 
   - block: 
 
@@ -25,6 +25,4 @@
 "
       notify: restart_splunk
 
-    when: manifest.rc == 1
-
-
+    when: not manifest.stat.exists
