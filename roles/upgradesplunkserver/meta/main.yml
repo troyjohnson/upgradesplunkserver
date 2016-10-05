@@ -135,20 +135,20 @@ galaxy_info:
   #  - 9.2
   #  - 9.3
   - name: Ubuntu
-  #  versions:
+    versions:
   #  - all
-  #  - lucid
-  #  - maverick
-  #  - natty
-  #  - oneiric
+    - lucid
+    - maverick
+    - natty
+    - oneiric
     - precise
-  #  - quantal
-  #  - raring
-  #  - saucy
+    - quantal
+    - raring
+    - saucy
     - trusty
-  #  - utopic
-  #  - vivid
-  #  - wily
+    - utopic
+    - vivid
+    - wily
     - xenial
   #- name: SLES
   #  versions:
@@ -174,9 +174,9 @@ galaxy_info:
   #  versions:
   #  - all
   #  - any
-  #- name: Debian
-  #  versions:
-  #  - all
+  - name: Debian
+    versions:
+    - all
   #  - etch
   #  - jessie
   #  - lenny
